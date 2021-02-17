@@ -1,0 +1,35 @@
+<h2 class="page-header">Register</h2>
+{{#if user}}
+        <div class="alert alert-warning">Username has taken already try new</div> 
+{{/if}}
+{{#if mail}}
+        <div class="alert alert-warning">Email has taken already try new</div> 
+{{/if}} 
+{{#if errors}}
+      {{#each errors}}
+        <div class="alert alert-warning">{{msg}}</div>
+      {{/each}}
+{{/if}}
+<form method="POST" action="/users/register">
+   <div class="form-group">
+    <label for="name">Name</label>
+    <input type="name" class="form-control" placeholder="Enter Name" name="name" id="name" />
+  </div>
+  <div class="form-group">
+    <label for="username">Username</label>
+    <input type="username" class="form-control" placeholder="Enter Username" name="username" id="username" />
+  </div>
+   <div class="form-group">
+    <label for="email">Email</label>
+    <input type="email" class="form-control" placeholder="Enter Email" name="email" id="email" />
+  </div>
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input type="password" class="form-control" placeholder="Enter Password" name="password" id="password" />
+  </div>
+  <div class="form-group">
+    <label for="password2">Confirm Password</label>
+    <input type="password" class="form-control" placeholder="Confirm Password" name="password2" id="password2" />
+  </div>
+  <button type="submit" class="btn btn-default">Submit</button>
+</form>
